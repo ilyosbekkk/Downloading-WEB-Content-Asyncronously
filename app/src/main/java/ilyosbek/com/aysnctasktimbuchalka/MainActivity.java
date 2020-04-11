@@ -3,6 +3,8 @@ package ilyosbek.com.aysnctasktimbuchalka;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -26,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
         data.execute("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/toppaidapplications/limit=25/xml3");
         Log.e("Message: ", "done!");
 
+    }
+
+    public void makeToast(View view) {
+        Toast.makeText(this, "Here's the change from VCS (GitHub)", Toast.LENGTH_SHORT).show();
     }
 
     private static class DownloadData extends AsyncTask<String, Void, String> {
